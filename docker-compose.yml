@@ -1,0 +1,21 @@
+services:
+  addon:
+    build: .
+    ports:
+      - "7000:7000"
+    env_file: .env
+    volumes:
+      - subtitle-cache:/data/cache
+    restart: unless-stopped
+
+  libretranslate:
+    image: libretranslate/libretranslate:latest
+    profiles: ["translate"]
+    environment:
+      LT_LOAD_ONLY: en,pt,es,fr,de,it
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+
+volumes:
+  subtitle-cache:

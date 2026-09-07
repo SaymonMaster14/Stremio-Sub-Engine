@@ -1,0 +1,16 @@
+{
+  "name": "stremio-sub-engine",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Self-hosted Stremio subtitle resolution, translation, synchronization and ASR fallback engine.",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node src/index.mjs",
+    "dev": "node --watch src/index.mjs",
+    "test": "node --test",
+    "check": "node tools/check.mjs"
+  },
+  "keywords": ["stremio", "subtitles", "opensubtitles", "translation", "ffsubsync", "whisper"],
+  "license": "MIT"
+}
